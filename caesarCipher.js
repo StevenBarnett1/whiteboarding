@@ -5,12 +5,15 @@ function caesarCipher(message, amount) {
     let alphabet = "abcdefghijklmnopqrstuvwxyz"
     let resultStr = ""
 
-    for(let i = 0; i < message.length - 1; i ++) {
+    for(let i = 0; i < message.length; i ++) {
         let eachLetter = message[i];
-        let indexInAlphaber = alpabet.indexOf(eachLetter);
+        let indexInAlphaber = alphabet.indexOf(eachLetter);
         let loopingIndex = (indexInAlphaber + amount) % alphabet.length
         resultStr += alphabet[loopingIndex];
     }
 
     return resultStr;
 }
+
+
+console.log(caesarCipher("cat", 2))
